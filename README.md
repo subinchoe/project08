@@ -217,23 +217,39 @@ Installed 10 object(s) from 1 fixture(s)
 ###### 4. GET `movies/{movie_pk}/`
 
 - movie_detail![movie_detail](README.assets/movie_detail.PNG)
+
+  
+
 - movie_detail_404![movie_detail_404](README.assets/movie_detail_404.PNG)
+
+  
 
 ###### 5. POST `movies/{movie_pk}/reviews/`
 
 - review![POST_review](README.assets/POST_review.PNG)
+
+  
+
 - review_404![POST_review_404](README.assets/POST_review_404.PNG)
+
 - review_400![POST_review_bad_400](README.assets/POST_review_bad_400.PNG)
 
 ###### 6. PUT `reviews/{review_pk}/`
 
 - review![PUT_review](README.assets/PUT_review.PNG)
+
+  
+
 - review_404![PUT_review_404](README.assets/PUT_review_404.PNG)
+
 - review_400![PUT_review_bad_400](README.assets/PUT_review_bad_400.PNG)
 
 ###### 7. DELETE `reviews/{review_pk}/`
 
 - review![DELETE_review](README.assets/DELETE_review.PNG)
+
+  
+
 - review_404![DELETE_review_404](README.assets/DELETE_review_404.PNG)
 
 #### API documents
