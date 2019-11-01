@@ -21,3 +21,9 @@ def movies(request):
     movie_all = Movie.objects.all()
     serializer = MovieSerializer(movie_all, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def movie_detail(request, movie_pk):
+    movie = get_object_or_404(Movie, id=movie_pk)
+    serializer = MovieSerializer(movie)
+    return Response(serializer.data)
