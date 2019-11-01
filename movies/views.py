@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Genre
-from .serializers import GenreSerializer
+from .models import Genre, Movie
+from .serializers import GenreSerializer, MovieSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
@@ -14,4 +14,10 @@ def genres(request):
 def genre_detail(request, genre_pk):
     genre = get_object_or_404(Genre, id=genre_pk)
     serializer = GenreSerializer(genre)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def movies(request):
+    movie_all = Movie.objects.all()
+    serializer = MovieSerializer(movie_all, many=True)
     return Response(serializer.data)
