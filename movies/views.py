@@ -37,10 +37,13 @@ def review_create(request, movie_pk):
         return Response({'message': "작성되었습니다."})
         # 입력할 때 {"content": "_", "score": 1, "movie": 1} 이 양식으로 데이터를 넣어줘야 한다.
 
-@api_view(['PUT', 'DELETE'])
+@api_view(['GET', 'PUT', 'DELETE'])
 def review_detail(request, review_pk):
     review = get_object_or_404(Review, id=review_pk)
-    if request.method == 'PUT':
+    if request.method == 'GET':
+        serializer = ReviewSerializer(review)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
         serializer = ReviewSerializer(data=request.data, instance=review)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
