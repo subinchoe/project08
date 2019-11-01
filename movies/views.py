@@ -45,3 +45,6 @@ def review_detail(request, review_pk):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response({'message': '수정되었습니다.'})
+    else:
+        review.delete()
+        return Response({'message': '삭제되었습니다.'})
